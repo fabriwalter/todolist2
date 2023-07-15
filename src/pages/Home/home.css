@@ -1,0 +1,28 @@
+.home-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid blue;
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url(../../../public/Roboto-Light.ttf);
+}
+
+.roboto-light {
+    font-family: roboto-light;
+}
+
+.home-subtitulo {
+    font-size: 15px;
+    max-width: 300px;
+    border: 1px solid red;
+    letter-spacing: 1.5px;
+}
+
+.home-subtitulo p {
+    margin-left: 12px;
+    text-align: center;
+}

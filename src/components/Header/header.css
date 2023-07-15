@@ -1,0 +1,12 @@
+.header-container {
+    width: 100%;
+    color: #85AFEE;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-titulo {
+    margin-bottom: 40px;
+}

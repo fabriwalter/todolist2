@@ -3,3 +3,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background: linear-gradient(#FFFFFF, #EAF0F9);
+  height: 100vh;
+  font-family: roboto-regular;
+  width: 100%;
+}
+
+@font-face {
+  font-family: roboto-regular;
+  src: url(../public/Roboto-Regular.ttf);
+}
+
+button {
+  cursor: pointer;
+}
