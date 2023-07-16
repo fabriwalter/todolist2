@@ -1,10 +1,15 @@
+/* Container da página HOME
+------------------------------------ */
+
 .home-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid blue;
 }
+
+/* Fonte light para o subtítulo.
+------------------------------------ */
 
 @font-face {
     font-family: roboto-light;
@@ -15,14 +20,74 @@
     font-family: roboto-light;
 }
 
+
+/* Subtítulo
+------------------------------------ */
+
 .home-subtitulo {
     font-size: 15px;
     max-width: 300px;
-    border: 1px solid red;
     letter-spacing: 1.5px;
+    margin-bottom: 70px;
 }
 
 .home-subtitulo p {
     margin-left: 12px;
     text-align: center;
+    line-height: 2em;
 }
+
+/* Input E-mail e Senha
+------------------------------------ */
+
+.home-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-email {
+    min-width: 23em;
+    min-height: 45px;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.input-senha {
+    min-width: 23em;
+    min-height: 45px;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 25px;
+    margin-bottom: 30px;
+}
+
+/* Botão Acessar
+------------------------------------ */
+
+.button-acessar {
+    min-height: 45px;
+    border-radius: 15px;
+    border: none;
+    background: linear-gradient(#9FC5FC, #85AFEE);
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0px 8px 10px rgba(133, 175, 238, 0.35);
+    margin-bottom: 30px;
+}
+
+/* Link para register
+------------------------------------ */
+
+.link-para-register {
+    text-decoration: none;
+    font-family: roboto-light;
+    color: #000;
+    font-size: 13px;
+}
+
+/* Footer
+------------------------------------ */
+

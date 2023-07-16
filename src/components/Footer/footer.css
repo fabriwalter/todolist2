@@ -1,0 +1,32 @@
+.footer {
+    margin-top: 120px;
+    min-width: 75%;
+}
+
+.div-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.title-footer {
+    font-family: roboto-light;
+    font-size: 12px;
+}
+
+.div-icons {
+    font-size: 25px;
+}
+
+.github-icon {
+    text-decoration: none;
+    color: #85AFEE;
+    margin-right: 10px;
+}
+
+.linkedin-icon {
+    text-decoration: none;
+    color: #85AFEE;
+}
