@@ -10,3 +10,20 @@
 .header-titulo {
     margin-bottom: 40px;
 }
+
+
+
+/* Medium devices (tablets, 768px and up)
+------------------------------------------------------*/
+
+@media (min-width: 768px) { 
+
+    .header-titulo {
+        margin-bottom: 10px;
+    }
+
+    .header-imagem {
+        display: none;
+    }
+
+}

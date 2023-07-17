@@ -7,7 +7,7 @@ export default function Header() {
       <header>
         <div className='header-container'>
             <h1 className='header-titulo'>Lista de tarefas</h1>
-            <Imagem />
+            <Imagem className='header-imagem'/>
         </div>
       </header>
     );

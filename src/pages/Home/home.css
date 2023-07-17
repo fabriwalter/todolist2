@@ -91,6 +91,21 @@
     font-size: 13px;
 }
 
-/* Footer
------------------------------------- */
 
+/* Medium devices (tablets, 768px and up)
+------------------------------------------------------*/
+
+@media (min-width: 768px) { 
+
+    .home-container {
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .home-subtitulo {
+        font-weight: 700;
+        max-width: 75%;
+        margin-bottom: 30px;
+    }
+
+}
