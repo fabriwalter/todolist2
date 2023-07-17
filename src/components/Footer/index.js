@@ -7,10 +7,10 @@ export default function Footer() {
     return(
         <footer className='footer'>
             
-            <hr></hr>
-            
+            <hr className='hr-footer'></hr>
+
             <div className='div-footer'>
-                
+
                 <span className='title-footer'>Designed by Walter Fabri</span>
                 
                 <div className='div-icons'>

@@ -15,13 +15,16 @@ export default function Home() {
                 <p className='roboto-light'>Simplifique sua rotina: o aplicativo inteligente que mantém suas tarefas em ordem.</p>
             </div>
 
-            <form className='home-form'>
-                <input type='text' placeholder='Digite seu e-mail...' className='input-email' />
-                <input type='text' placeholder='********************' className='input-senha' autoComplete={false} />
-                
+            <div className='div-home-form'>
+                <form className='home-form'>
+                    <input type='text' placeholder='Digite seu e-mail...' className='input-email' />
+                    <input type='text' placeholder='********************' className='input-senha' autoComplete={false} />             
 
-                <button type='submit' className='button-acessar'>Acessar</button>
-            </form>
+
+                    <button type='submit' className='button-acessar'>Acessar</button>
+                </form>
+            </div>
+            
 
             <Link to="/register" className='link-para-register'>
                 Não possui uma conta? Cadastre-se!

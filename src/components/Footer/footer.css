@@ -1,6 +1,10 @@
 .footer {
     margin-top: 120px;
-    min-width: 75%;
+    min-width: 45%;
+}
+
+.hr-footer {
+    min-width: 23em;
 }
 
 .div-footer {

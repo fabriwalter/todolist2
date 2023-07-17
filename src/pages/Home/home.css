@@ -39,6 +39,9 @@
 
 /* Input E-mail e Senha
 ------------------------------------ */
+.div-home-form {
+    min-width: 45%;
+}
 
 .home-form {
     display: flex;
