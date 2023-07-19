@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebaseConnection';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
+import { toast } from 'react-toastify';
+
 import './home.css';
 
 export default function Home() {
@@ -26,10 +28,12 @@ export default function Home() {
             await signInWithEmailAndPassword(auth, email, password)
             .then(() => {
                 //Navegar para ADMIN
-                navigate('/admin', { replace: true } )
+                navigate('/admin', { replace: true } );
+                toast.success('Bem-vindo! =)');
             })
             .catch((e) => {
                 console.log('Erro ao fazer o Login: ' + e);
+                toast.error('E-mail e/ou senha inválidos!');
             })
 
         } else {
@@ -40,7 +44,7 @@ export default function Home() {
 
     return (
         <div className='home-container'>
-            <Header />
+            <Header titulo="Lista de tarefas" />
             <div className='home-subtitulo'>
                 <p className='roboto-light'>Simplifique sua rotina: o aplicativo inteligente que mantém suas tarefas em ordem.</p>
             </div>

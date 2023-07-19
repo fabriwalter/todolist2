@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom';
 import { auth } from '../../firebaseConnection';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
+import { toast } from 'react-toastify';
+
 export default function Register() {
 
     const [email, setEmail] = useState('');
@@ -22,8 +24,10 @@ export default function Register() {
           await createUserWithEmailAndPassword(auth, email, password)
           .then(() => {
             navigate('/admin', { replace: true });
+            toast.success('Cadastro realizado com sucesso!');
           })
           .catch((e) => {
+            toast.error('E-mail e/ou senha inválidos! Por favor, tente novamente!');
             console.log('Ocorreu um erro ao cadastrar: ' + e)
           })
 
@@ -35,7 +39,7 @@ export default function Register() {
 
     return (
         <div className='home-container'>
-            <Header />
+            <Header titulo="Cadastre-se" />
             <div className='home-subtitulo'>
                 <p className='roboto-light'>Vamos criar sua conta!</p>
             </div>
