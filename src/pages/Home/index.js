@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import { auth } from '../../firebaseConnection';
-import {signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import './home.css';
 
@@ -48,7 +48,7 @@ export default function Home() {
             <div className='div-home-form'>
                 <form className='home-form' onSubmit={handleLogin}>
                     <input type='text' placeholder='Digite seu e-mail...' className='input-email' value={email} onChange={(e) => setEmail(e.target.value) } />
-                    <input type='text' placeholder='********************' className='input-senha' autoComplete={false} value={password} onChange={(e) => setPassword(e.target.value) } />             
+                    <input type='password' placeholder='********************' className='input-senha' value={password} onChange={(e) => setPassword(e.target.value) } />             
 
 
                     <button type='submit' className='button-acessar'>Acessar</button>
