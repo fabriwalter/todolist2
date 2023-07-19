@@ -6,7 +6,7 @@
 
 body {
   background: linear-gradient(#FFFFFF, #EAF0F9);
-  height: 100vh;
+  min-height: 100vh;
   font-family: roboto-regular;
   width: 100%;
 }

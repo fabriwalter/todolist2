@@ -25,22 +25,22 @@
 ------------------------------------ */
 
 .home-subtitulo {
-    font-size: 15px;
+    font-size: 1.6vh;
     max-width: 300px;
     letter-spacing: 1.5px;
-    margin-bottom: 70px;
+    margin-bottom: 7.8vh;
 }
 
 .home-subtitulo p {
-    margin-left: 12px;
+    margin-left: 2.89vw;
     text-align: center;
-    line-height: 2em;
+    line-height: 3.2vh;
 }
 
 /* Input E-mail e Senha
 ------------------------------------ */
 .div-home-form {
-    min-width: 45%;
+    min-width: 74vw;
 }
 
 .home-form {
@@ -49,36 +49,36 @@
 }
 
 .input-email {
-    min-width: 23em;
-    min-height: 45px;
+    min-width: 74vw;
+    min-height: 5vh;
     border-radius: 15px;
     border: 2px solid black;
     padding-left: 25px;
-    margin-bottom: 15px;
+    margin-bottom: 1.6vh;
 }
 
 .input-senha {
-    min-width: 23em;
-    min-height: 45px;
+    min-width: 74vw;
+    min-height: 5vh;
     border-radius: 15px;
     border: 2px solid black;
     padding-left: 25px;
-    margin-bottom: 30px;
+    margin-bottom: 3.3vh;
 }
 
 /* Botão Acessar
 ------------------------------------ */
 
 .button-acessar {
-    min-height: 45px;
-    border-radius: 15px;
+    min-height: 5vh;
+    border-radius: 1.67vh;
     border: none;
     background: linear-gradient(#9FC5FC, #85AFEE);
     color: #FFF;
-    font-size: 20px;
+    font-size: 2.2vh;
     font-weight: 700;
-    box-shadow: 0px 8px 10px rgba(133, 175, 238, 0.35);
-    margin-bottom: 30px;
+    box-shadow: 0px 0.89vh 1.1vh rgba(133, 175, 238, 0.35);
+    margin-bottom: 3.3vh;
 }
 
 /* Link para register
@@ -88,7 +88,7 @@
     text-decoration: none;
     font-family: roboto-light;
     color: #000;
-    font-size: 13px;
+    font-size: 1.45vh;
 }
 
 
@@ -108,4 +108,23 @@
         margin-bottom: 30px;
     }
 
+
+    .div-home-form {
+        min-width: 633px;
+    }
+
+    .input-email {
+        min-width: 0;
+        max-width: 633px;
+    }
+
+
+    .input-senha {
+        min-width: 0;
+        max-width: 633px;
+    }
+
+    .button-acessar {
+        max-width: 633px;
+    }
 }

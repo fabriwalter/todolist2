@@ -1,10 +1,10 @@
 .footer {
-    margin-top: 120px;
-    min-width: 45%;
+    margin-top: 13vh;
+    min-width: 45vw;
 }
 
 .hr-footer {
-    min-width: 23em;
+    min-width: 74vw;
 }
 
 .div-footer {
@@ -12,25 +12,33 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 1.6vh;
 }
 
 .title-footer {
     font-family: roboto-light;
-    font-size: 12px;
+    font-size: 1.3vh;
 }
 
 .div-icons {
-    font-size: 25px;
+    font-size: 2.7vh;
 }
 
 .github-icon {
     text-decoration: none;
     color: #85AFEE;
-    margin-right: 10px;
+    margin-right: 2.4vw;
 }
 
 .linkedin-icon {
     text-decoration: none;
     color: #85AFEE;
+}
+
+@media (min-width: 768px) {
+
+    .footer {
+        margin-top: 26vh;
+    }
+
 }
