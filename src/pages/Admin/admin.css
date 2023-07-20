@@ -1,0 +1,143 @@
+.admin-container-bigger {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.admin-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-container .header-imagem {
+    display: none;
+}
+
+
+
+/* TextArea Input
+------------------------------- */
+
+.admin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-tarefas {
+    min-width: 77vw;
+    min-height: 9.5vh;
+    padding-left: 6.4vw;
+    padding-top: 1.7vh;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin-bottom: 4.7vh;
+}
+
+.button-registrar-tarefa {
+    min-width: 77vw;
+    min-height: 5vh;
+    border-radius: 1.67vh;
+    border: none;
+    background: linear-gradient(#9FC5FC, #85AFEE);
+    color: #FFF;
+    font-size: 2.2vh;
+    font-weight: 700;
+    box-shadow: 0px 0.89vh 1.1vh rgba(133, 175, 238, 0.35);
+    margin-bottom: 3.3vh;
+}
+
+
+/* HR 
+----------------------- */
+
+.admin-hr {
+    width: 77vw;
+    border: 0.2vh solid black;
+    color: black;
+    margin-bottom: 5.3vh;
+}
+
+/* Tarefas
+---------------------------- */
+
+.admin-article {
+    border: 1px solid #CACACA;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 77vw;
+    min-height: 4.5vh;
+    background: #FFF;
+    border-radius: 15px;
+    margin-bottom: 3.5vh;
+    padding-left: 5.1vw;
+    
+}
+
+.admin-tarefas {
+    padding-left: 3.8vw;
+    min-width: 35vw;
+    font-size: 12px;
+    word-break: break-all;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.admin-tarefas:hover {
+    overflow: visible;
+    white-space: normal;
+}
+
+.admin-div-icons {
+    min-width: 15vw;
+    margin-left: 15vw;
+    margin-right: 5vw;
+}
+
+.admin-icon {
+    text-decoration: none;
+    color: #85AFEE;
+}
+
+.admin-icon-edit {
+    width: 15px;
+    height: 15px;
+    margin-right: 3.8vw;
+}
+
+.admin-icon-delete {
+    width: 15px;
+    height: 15px;
+}
+
+
+/* Logout Button
+---------------------------- */
+
+
+.admin-div-logout {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 2vh;
+}
+
+.admin-button-logout {
+    margin-right: 10vw;
+    min-width: 19vw;
+    min-height: 5vh;
+    border-radius: 1.67vh;
+    border: none;
+    background: linear-gradient(#9FC5FC, #85AFEE);
+    color: #FFF;
+    font-size: 2.2vh;
+    font-weight: 700;
+    box-shadow: 0px 0.89vh 1.1vh rgba(133, 175, 238, 0.35);
+}
+
+.admin-div-footer {
+    display: flex;
+    justify-content: center;
+}

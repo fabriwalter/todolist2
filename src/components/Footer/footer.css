@@ -1,6 +1,6 @@
 .footer {
-    margin-top: 13vh;
     min-width: 45vw;
+    max-width: 77vw;
 }
 
 .hr-footer {
@@ -38,7 +38,7 @@
 @media (min-width: 768px) {
 
     .footer {
-        margin-top: 26vh;
+    
     }
 
 }
