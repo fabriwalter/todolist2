@@ -43,28 +43,33 @@ export default function Home() {
     }
 
     return (
-        <div className='home-container'>
-            <Header titulo="Lista de tarefas" />
-            <div className='home-subtitulo'>
-                <p className='roboto-light'>Simplifique sua rotina: o aplicativo inteligente que mantém suas tarefas em ordem.</p>
+        <div className='home-container-bigger'>
+            <div className='home-container'>
+                <Header titulo="Lista de tarefas" />
+                <div className='home-subtitulo'>
+                    <p className='roboto-light'>Simplifique sua rotina: o aplicativo inteligente que mantém suas tarefas em ordem.</p>
+                </div>
+
+                <div className='div-home-form'>
+                    <form className='home-form' onSubmit={handleLogin}>
+                        <input type='text' placeholder='Digite seu e-mail...' className='input-email' value={email} onChange={(e) => setEmail(e.target.value) } />
+                        <input type='password' placeholder='********************' className='input-senha' value={password} onChange={(e) => setPassword(e.target.value) } />             
+
+
+                        <button type='submit' className='button-acessar'>Acessar</button>
+                    </form>
+                </div>
+                
+
+                <Link to="/register" className='link-para-register'>
+                    Não possui uma conta? Cadastre-se!
+                </Link>
+
             </div>
 
-            <div className='div-home-form'>
-                <form className='home-form' onSubmit={handleLogin}>
-                    <input type='text' placeholder='Digite seu e-mail...' className='input-email' value={email} onChange={(e) => setEmail(e.target.value) } />
-                    <input type='password' placeholder='********************' className='input-senha' value={password} onChange={(e) => setPassword(e.target.value) } />             
-
-
-                    <button type='submit' className='button-acessar'>Acessar</button>
-                </form>
+            <div className='home-container-footer'>
+                <Footer />
             </div>
-            
-
-            <Link to="/register" className='link-para-register'>
-                Não possui uma conta? Cadastre-se!
-            </Link>
-
-            <Footer />
-    </div>
-    );
+        </div>
+);
 }
