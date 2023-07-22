@@ -38,7 +38,35 @@
 @media (min-width: 768px) {
 
     .footer {
-    
+        width: 60vw;
     }
 
+    .hr-footer {
+        min-width: 60vw;
+    }
+
+}
+
+@media (min-width: 1200px) {
+
+    .footer {
+        width: 50vw;
+    }
+
+    .hr-footer {
+        min-width: 50vw;
+    }
+
+}
+
+@media (min-width: 1400px) {
+    
+    .footer {
+        min-width: 0vw;
+        width: 35vw;
+    }
+
+    .hr-footer {
+        min-width: 35vw;
+    }
 }

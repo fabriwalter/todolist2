@@ -141,3 +141,109 @@
     display: flex;
     justify-content: center;
 }
+
+
+@media (min-width: 768px) {
+
+    .input-tarefas {
+        min-width: 0;
+        width: 60vw;
+    }
+
+    .button-registrar-tarefa {
+        min-width: 0;
+        width: 60vw;
+    }
+
+    .admin-hr {
+        min-width: 0;
+        width: 60vw;
+    }
+
+    .admin-article {
+        width: 60vw;
+    }
+
+    .admin-div-icons {
+        margin-left: 5vw;
+    }
+
+    .admin-button-logout {
+        min-width: 10vw;
+        margin-right: 20vw;
+    }
+
+}
+
+
+@media (min-width: 1200px) {
+
+    .input-tarefas {
+        width: 50vw;
+    }
+
+    .button-registrar-tarefa {
+        width: 50vw;
+    }
+
+    .admin-hr {
+        width: 50vw;
+    }
+
+    .admin-article {
+        width: 50vw;
+        padding-left: 3vw;
+    }
+
+    .admin-tarefas {
+        min-width: 30vw;
+    }
+
+    .admin-div-icons {
+        margin-left: 4vw;
+    }
+
+    .admin-button-logout {
+        margin-right: 25vw;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+
+    .input-tarefas {
+        padding-left: 3vw;
+        width: 35vw;
+    }
+
+    .button-registrar-tarefa {
+        width: 35vw;
+    }
+
+    .admin-hr {
+        width: 35vw;
+    }
+
+    .admin-article {
+        width: 35vw;
+    }
+
+    .admin-tarefas {
+        min-width: 20vw;
+    }
+
+    .admin-div-icons {
+        margin-left: 4vw;
+    }
+
+    .admin-icon-edit {
+        margin-right: 3vw;
+    }
+
+    .admin-button-logout {
+        min-width: 7.5vw;
+        margin-right: 32.5vw;
+    }
+
+}
