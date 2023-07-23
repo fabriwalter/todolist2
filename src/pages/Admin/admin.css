@@ -137,6 +137,10 @@
     box-shadow: 0px 0.89vh 1.1vh rgba(133, 175, 238, 0.35);
 }
 
+.admin-button-logout:hover {
+    background: #9FC5FC;
+}
+
 .admin-div-footer {
     display: flex;
     justify-content: center;

@@ -8,6 +8,9 @@ import { Link } from 'react-router-dom';
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBinLine } from 'react-icons/ri'
 
+import { auth } from '../../firebaseConnection';
+import { signOut } from 'firebase/auth';
+
 import './admin.css';
 
 export default function Admin() {
@@ -17,6 +20,10 @@ export default function Admin() {
     function handleRegister(e) {
         e.preventDefault();
         alert('Enviou tarefa!');
+    }
+
+    async function handleLogout() {
+        await signOut(auth);
     }
 
     return(
@@ -150,7 +157,7 @@ export default function Admin() {
 
             <div className='admin-container-footer-and-button'>
                 <div className='admin-div-logout'>
-                    <button className='admin-button-logout'>Sair</button>
+                    <button className='admin-button-logout' onClick={handleLogout}>Sair</button>
                 </div>
                 <div className='admin-div-footer'>
                     <Footer />
