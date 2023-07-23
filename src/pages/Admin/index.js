@@ -16,7 +16,9 @@ import {
     onSnapshot,
     query,
     orderBy,
-    where
+    where,
+    doc,
+    deleteDoc
  } from 'firebase/firestore';
 
 
@@ -89,6 +91,11 @@ export default function Admin() {
         await signOut(auth);
     }
 
+    async function deleteTarefa(id) {
+        const docRef = doc(db, 'tarefas', id);
+        await deleteDoc(docRef);
+    }
+
     return(
         
         <div className='admin-container-bigger'>
@@ -106,116 +113,19 @@ export default function Admin() {
                 </form>
                 <hr className='admin-hr'></hr>
 
-                <article className='admin-article'>
+                {tarefas.map((item) => (
+                    <article key={item.id} className='admin-article'>
                     <Icone />
                 
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
+                    <p className='admin-tarefas'>{item.tarefa}</p>
                 
                     <div className='admin-div-icons'>
                         <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
+                        <Link onClick={ () => deleteTarefa(item.id) } className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
                     </div>
                 </article>
+                ))}
 
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-
-                <article className='admin-article'>
-                    <Icone />
-                
-                    <p className='admin-tarefas'>Daily UI Challengeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</p>
-                
-                    <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
-                        <Link className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
-                    </div>
-                </article>
-                
             </div>
 
             <div className='admin-container-footer-and-button'>
