@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Header from '../../components/Header';
 import Icone from '../../components/Icone';
@@ -8,18 +8,54 @@ import { Link } from 'react-router-dom';
 import { FaRegEdit } from 'react-icons/fa';
 import { RiDeleteBinLine } from 'react-icons/ri'
 
-import { auth } from '../../firebaseConnection';
+import { auth, db } from '../../firebaseConnection';
 import { signOut } from 'firebase/auth';
+import { 
+    addDoc,
+    collection
+ } from 'firebase/firestore';
+
+
+import { toast } from 'react-toastify';
 
 import './admin.css';
 
 export default function Admin() {
     
     const [tarefaInput, setTarefaInput] = useState('');
-    
-    function handleRegister(e) {
+    const [user, setUser] = useState({});
+
+
+    useEffect(() => {
+        async function loadTarefas() {
+            const userDetails = localStorage.getItem("@detalhesUsuario");
+            setUser(JSON.parse(userDetails));
+        }
+
+        loadTarefas();
+    }, [])
+
+    async function handleRegister(e) {
         e.preventDefault();
-        alert('Enviou tarefa!');
+        
+        if(tarefaInput === '') {
+            toast.error('Digite alguma tarefa');
+            return;
+        }
+
+        await addDoc(collection(db, "tarefas"), {
+            tarefa: tarefaInput,
+            created: new Date(),
+            userUid: user?.uid
+        })
+        .then(() => {
+            toast.success('Tarefa cadastrada com sucesso!');
+            setTarefaInput('');
+        })
+        .catch((error) => {
+            toast.error('Erro ao cadastrar tarefa!');
+        })
+
     }
 
     async function handleLogout() {
