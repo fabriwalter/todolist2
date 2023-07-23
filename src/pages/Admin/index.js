@@ -18,7 +18,8 @@ import {
     orderBy,
     where,
     doc,
-    deleteDoc
+    deleteDoc,
+    updateDoc
  } from 'firebase/firestore';
 
 
@@ -31,7 +32,7 @@ export default function Admin() {
     const [tarefaInput, setTarefaInput] = useState('');
     const [user, setUser] = useState({});
     const [tarefas, setTarefas] = useState([]);
-
+    const [edit, setEdit] = useState({});
 
     useEffect(() => {
         async function loadTarefas() {
@@ -54,7 +55,6 @@ export default function Admin() {
                         })
                     })
 
-                    console.log(lista);
                     setTarefas(lista);
                 });
             }
@@ -69,6 +69,11 @@ export default function Admin() {
         
         if(tarefaInput === '') {
             toast.error('Digite alguma tarefa');
+            return;
+        }
+
+        if(edit?.id) {
+            handleUpdateTarefa();
             return;
         }
 
@@ -96,6 +101,29 @@ export default function Admin() {
         await deleteDoc(docRef);
     }
 
+    function editTarefa(item) {
+        setTarefaInput(item.tarefa);
+        setEdit(item);
+
+    }
+
+    async function handleUpdateTarefa() {
+        const docRef = doc(db, 'tarefas', edit?.id);
+        await updateDoc(docRef, {
+            tarefa: tarefaInput
+        })
+        .then(() => {
+            toast.success('Tarefa atualizada com sucesso!');
+            setTarefaInput('');
+            setEdit({});
+        })
+        .catch(() => {
+            toast.error('Erro ao atualizar tarefa');
+            setTarefaInput('');
+            setEdit({});
+        })
+    }
+
     return(
         
         <div className='admin-container-bigger'>
@@ -109,7 +137,11 @@ export default function Admin() {
                     value={tarefaInput}
                     onChange={(e) => setTarefaInput(e.target.value)}></textarea>
 
-                    <button className='button-registrar-tarefa'>Registrar tarefa</button>
+                    {Object.keys(edit).length > 0 ? (
+                        <button className='button-registrar-tarefa'>Atualizar tarefa</button>
+                    ) : (
+                        <button className='button-registrar-tarefa'>Registrar tarefa</button>
+                    )}
                 </form>
                 <hr className='admin-hr'></hr>
 
@@ -120,7 +152,7 @@ export default function Admin() {
                     <p className='admin-tarefas'>{item.tarefa}</p>
                 
                     <div className='admin-div-icons'>
-                        <Link className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
+                        <Link onClick={ () => editTarefa(item) } className='admin-icon'> <FaRegEdit className='admin-icon-edit' /> </Link>
                         <Link onClick={ () => deleteTarefa(item.id) } className='admin-icon'> <RiDeleteBinLine className='admin-icon-delete' /> </Link>
                     </div>
                 </article>
